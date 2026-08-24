@@ -1,7 +1,10 @@
-function [ s ] = DiscretizeState( x, statelist )
-%DiscretizeState check which entry in the state list is more close to x and
-%return the index of that entry.
+function xp = DiscretizeState(x, statelist)
 
+% Distancia euclidiana entre x y cada estado de statelist
+diferencias = statelist - repmat(x(:)', size(statelist,1), 1);
+distancias = sqrt(sum(diferencias.^2, 2));
 
-[d  s] = min(dist(statelist,x'));
+% Índice del estado más cercano
+[~, xp] = min(distancias);
 
+end

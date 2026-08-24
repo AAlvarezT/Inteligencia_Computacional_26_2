@@ -1,11 +1,10 @@
 
 % See Sutton & Barto book: Reinforcement Learning p.214
-
+    
 clc
 clear all 
 close all
 clf
-
 
 
 maxepisodes = 400
@@ -22,9 +21,9 @@ nstates     = size(statelist,1);
 nactions    = size(actionlist,1);
 Q           = BuildQTable( nstates,nactions );  % the Qtable
 
-alpha       = 0.5;   % learning rate
-gamma       = 1.0;   % discount factor
-epsilon     = 0.01;  % probability of a random action selection
+    alpha       = 0.5;   % learning rate
+    gamma       = 1.0 ;   % discount factor
+    epsilon     = 0.01;  % probability of a random action selection
 grafica     = false; % indicates if display the graphical interface
 
 xpoints=[];
