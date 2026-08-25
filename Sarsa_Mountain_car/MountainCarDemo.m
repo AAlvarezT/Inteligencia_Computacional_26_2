@@ -21,7 +21,7 @@ nstates     = size(statelist,1);
 nactions    = size(actionlist,1);
 Q           = BuildQTable( nstates,nactions );  % the Qtable
 
-    alpha       = 0.5;   % learning rate
+    alpha       = 0.1;   % learning rate
     gamma       = 1.0 ;   % discount factor
     epsilon     = 0.01;  % probability of a random action selection
 grafica     = false; % indicates if display the graphical interface
