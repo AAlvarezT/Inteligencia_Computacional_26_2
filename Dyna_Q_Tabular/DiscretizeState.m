@@ -3,5 +3,7 @@ function [ s ] = DiscretizeState( x, statelist )
 %return the index of that entry.
 
 
-[d  s] = min(dist(statelist,x'));
+x = x(:)';  % Asegura que x sea una fila
+distances = sqrt(sum((statelist - x).^2, 2));
+[d, s] = min(distances);
 
