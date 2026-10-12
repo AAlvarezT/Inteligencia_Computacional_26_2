@@ -156,6 +156,7 @@ function nivelSalida = decidirNivel(subsistema, x)
     end
 end
 
+
 function fis = agregarConjuntos(fis, variable)
     fis = addMF(fis, variable, "trapmf", [0 0 2 4], ...
         Name="Bajo");
