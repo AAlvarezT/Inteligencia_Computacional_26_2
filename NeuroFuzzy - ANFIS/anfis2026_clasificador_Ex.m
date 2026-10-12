@@ -9,7 +9,7 @@ rng(1);
 filename = "Base_Prestamos_ANFIS_Sesgo_Oculto.csv";
 
 if ~isfile(filename)
-    websave(filename,url);
+    websave(filename);
 end
 
 T = readtable(filename);

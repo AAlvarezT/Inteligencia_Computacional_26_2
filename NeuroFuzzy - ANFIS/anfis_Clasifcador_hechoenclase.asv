@@ -1,0 +1,34 @@
+clear; clc; close all
+%% Programa
+rng(1)
+
+filename = "Base_Prestamos_ANFIS_Sesgo_Oculto.csv";
+
+T = readtable(filename);
+
+disp("primeras 10:");
+disp(T(1:10,:));
+
+%% Acá separamos la dependiente de la independiente
+X = [T.Genero T.Edad T.IngresoMensual T.AntiguedadLaboral T.IndiceDeuda];
+Y = T.PrestamoAprobado;
+% Formamos nuestra variable normalizada para poder añadir el algoritmo
+
+Xn = normalize(X);
+data = [Xn Y];
+
+N = size(data, 1);
+idx = randperm(N);
+Ntrain = round(0.7*N);
+
+trainData = data(idx(1:Ntrain),:);
+testData = data(idx(Ntrain+1:end,:));
+%Ya hasta ahora solo hemos manipulado data
+%% Ahora sí empieza el algoritmo
+% ANFIS 1: GRID PARTITION
+tic
+optGrid = gendisOptions("GridPartition");
+optGrid = NumMembershipFunctions = [3 3 3 3 3];
+optGrid = 
+
+
